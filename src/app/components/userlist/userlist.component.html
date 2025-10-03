@@ -1,1 +1,42 @@
-<p>userlist works!</p>
+<div *ngIf="isLoading" class="d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div
+    class="spinner-grow text-primary"
+    role="status"
+    style="width: 4rem; height: 4rem"
+  >
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<div *ngIf="!isLoading" [@listAnimation]>
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h2 class="mb-2 text-primary">User List</h2>
+     <img src="https://cdn-icons-png.flaticon.com/512/8922/8922789.png" class="plusIcon cursorPointer" alt="">
+  </div>
+
+  <div *ngFor="let user of userList; index as i" class="card shadow-sm mb-3">
+    <div class="card-header bg-light d-flex justify-content-between align-items-center">
+      <!-- Toggle link -->
+      <a
+        class="fw-bold text-decoration-none text-dark"
+        data-bs-toggle="collapse"
+        href="#collapse{{ i }}"
+        role="button"
+        aria-expanded="false"
+        [attr.aria-controls]="'collapse' + i"
+      >
+        <i class="bi bi-person-circle me-2 text-primary"></i> {{ user.name }}
+      </a>
+
+      <span class="badge bg-primary">User #{{ i + 1 }}</span>
+    </div>
+
+    <!-- Collapsible content -->
+    <div class="collapse" [id]="'collapse' + i">
+      <div class="card-body">
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Phone:</strong> {{ user.phone }}</p>
+        <p class="mb-0"><strong>Address:</strong> {{ user.address }}</p>
+      </div>
+    </div>
+  </div>
+</div>

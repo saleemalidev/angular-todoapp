@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.cursorPointer{
+    cursor: pointer;
+}
+
+.plusIcon{
+    height: 30px;
+    width: 30px;
+}
+.plusIcon:hover{
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+    transform: scale(1.1);
+} 

@@ -12,4 +12,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  collapseNavbar() {
+    const navbarToggler = document.querySelector('.navbar-toggler') as HTMLElement;
+    const navbarCollapse = document.querySelector('.navbar-collapse') as HTMLElement;
+
+    if (navbarToggler && navbarCollapse.classList.contains('show')) {
+      navbarToggler.click();
+    }
+  }
 }

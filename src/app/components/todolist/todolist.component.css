@@ -1,0 +1,12 @@
+                      
+.custom-hover {
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.custom-hover:hover {
+  background-color: #f8f9fa; 
+  
+  cursor: pointer;
+  transform: scale(1.05); /* slightly enlarge */
+  box-shadow:0 0px 8px 9px rgba(0, 0, 0, 0.1)
+}

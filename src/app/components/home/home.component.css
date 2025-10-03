@@ -1,4 +1,29 @@
+
 img{
     height: 100px;   
     width:  100px;   
+}
+
+.rotate-hover {
+  transition: transform 0.5s ease; /* smooth animation */
+}
+
+.rotate-hover:hover {
+  transform: rotate(20deg); /* rotate 20 degrees on hover */
+}
+
+
+/* Image size */
+img {
+    height: 100px;   
+    width: 100px;   
+}
+
+/* Rotate on hover */
+.rotate-hover {
+  transition: transform 0.5s ease; /* smooth animation */
+}
+
+.rotate-hover:hover {
+  transform: rotate(360deg); /* rotate full circle */
 }
