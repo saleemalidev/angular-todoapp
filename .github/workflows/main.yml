@@ -1,0 +1,22 @@
+name: Build and deploy my Angular DevOps App
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-angular-devops-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5.0.0
+      - name: Setup NodeJS 
+        uses: actions/setup-node@v5.0.0
+        with:
+          node-version: 22.x
+    
+      - name: Install dependencies
+        run: npm install 
+
+      - name: Build Angular App
+        run: npm run build
